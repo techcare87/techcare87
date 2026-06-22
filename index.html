@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dépannage Informatique & Mobile</title>
+    <title>TechCare87 - Dépannage informatique à domicile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> rel="stylesheet">
+    <meta name="description" content="Dépannage informatique et mobile à domicile. TechCare87, service rapide et transparent.">
+    <meta name="keywords" content="dépannage informatique, réparation PC, smartphone, Limoges, TechCare87">
+    <meta name="author" content="TechCare87">
 
     <style>
         :root {
@@ -339,7 +342,7 @@
         .price-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: auto;
+    table-layout: fixed;
 }
 
 .price-table tr {
@@ -351,10 +354,12 @@
 }
 
 .price-table td {
+    box-sizing: border-box;
+    max-width: 100%;
     padding: 0.85rem 0;
     vertical-align: middle;
     word-wrap: break-word;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
 }
 
 .price-table td:first-child {
@@ -366,7 +371,10 @@
     text-align: right;
     font-weight: 600;
     color: var(--green-dark);
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: normal;
+    width: 90px;
+
 }
 
 .price-free {
@@ -434,10 +442,14 @@
 }
 
 .service-detail-cell {
+    width: 100%;
     padding: 0 0 1rem 0 !important;
 }
 
 .service-detail-box {
+    width: 100%;
+    box-sizing: border-box; 
+    overflow-wrap: anywhere;
     background: var(--white);
     border: 1px solid var(--beige-dark);
     border-radius: 12px;
