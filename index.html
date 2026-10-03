@@ -38,7 +38,7 @@
             color : white;
             border: 2px solid #54864a;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 50px;
             font-weight: 600;
             transition: all 0.25s ease;
         }
@@ -47,6 +47,8 @@
             background-color: #2b4626;
             border-color: #2b4626;
             color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(92, 74, 50, 0.4);
         }
 
         .grosBtnAcheter{
@@ -54,12 +56,12 @@
         }
         .grosBtnAcheter a {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 1rem 2rem;
             background-color: #54864a;
             color : white;
             border: 2px solid #54864a;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 50px;
             font-size: 30px;
             font-weight: 600;
             transition: all 0.25s ease;
@@ -69,7 +71,36 @@
             background-color: #2b4626;
             border-color: #2b4626;
             color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(92, 74, 50, 0.4);
         }
+
+        .containerPourboire{
+            padding: 1rem 2rem;
+            border-radius: 50px;
+        }
+        .containerPourboire a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            margin-top: 0.5rem;
+            background-color: #54864a;
+            color : white;
+            border: 2px solid #54864a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.25s ease;
+        }
+
+        .containerPourboire a:hover {
+            background-color: #2b4626;
+            border-color: #2b4626;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(92, 74, 50, 0.4);
+        }
+
 
         * {
             margin: 0;
@@ -181,6 +212,9 @@
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
+            background: none;
+            border: none;
+            padding: 0;
         }
 
         .menu-toggle span {
@@ -193,12 +227,11 @@
 
         .hero {
             min-height: 100vh;
-	    padding-top: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, var(--beige-light) 0%, var(--beige) 100%);
-            padding: 6rem 2rem 4rem;
+            padding: 120px 2rem 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -885,6 +918,9 @@
         }
 
         @media (max-width: 768px) {
+            .hero {
+                padding: 160px 2rem 4rem;
+            }
             .nav-links {
                 display: none;
                 position: absolute;
@@ -896,8 +932,8 @@
                 padding: 1rem;
                 gap: 0;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-		font-size: 0.85rem;
-		line-height: 1.4;
+		        font-size: 0.85rem;
+		        line-height: 1.4;
             }
 
             .nav-links.active {
@@ -918,11 +954,11 @@
             .legal-grid {
                 grid-template-columns: 1fr;
             }
-	   .service-detail-box {
-    		word-wrap: break-word;
-    		overflow-wrap: break-word;
-    		font-size: 0.85rem;
-	    }
+	        .service-detail-box {
+    		    word-wrap: break-word;
+    		    overflow-wrap: break-word;
+    		    font-size: 0.85rem;
+	        }
 
             .hero h1 {
                 font-size: 2.2rem;
@@ -951,11 +987,11 @@
                 <li><a href="#legal">Mentions légales</a></li>
             </ul>
 
-            <div class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" role="button" tabindex="0">
+            <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" type="button">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -967,6 +1003,9 @@
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary">Demander un devis</a>
                 <a href="#services" class="btn btn-secondary">Voir les tarifs</a>
+            </div>
+            <div class="containerPourboire">
+                <a href="https://donate.stripe.com/dRmbJ14uWakq5xrfxmdZ60B" class="pourboire" target="_blank" rel="noopener">💚 Laisser un pourboire</a>
             </div>
         </div>
     </section>
@@ -990,7 +1029,7 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Diagnostic simple</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
         <td class="price-free">Gratuit</td>
@@ -1013,10 +1052,11 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Diagnostic approfondi (&gt;30 min)</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>15 €<div class="btnAcheter"> <a href="https://buy.stripe.com/6oUeVdf9A78e7Fz4SIdZ602">Acheter</a> </div></td>
+        <td>15 €<div class="btnAcheter"> <a href="https://buy.stripe.com/6oUeVdf9A78e7Fz4SIdZ602" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     
     <tr class="service-detail-row">
@@ -1037,10 +1077,11 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Nettoyage logiciel complet</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/7sYeVd5z0fEK8JDetidZ603">Acheter</a> </div></td>
+        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/7sYeVd5z0fEK8JDetidZ603" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1060,10 +1101,11 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Réinstallation Windows</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>45 €<div class="btnAcheter"> <a href="https://buy.stripe.com/bJe00j0eG1NU1hb5WMdZ604">Acheter</a> </div></td>
+        <td>45 €<div class="btnAcheter"> <a href="https://buy.stripe.com/bJe00j0eG1NU1hb5WMdZ604" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1073,7 +1115,7 @@
                     <li>Réinstallation propre du système Windows.</li>
                     <li>Réglages de base après installation.</li>
                     <li>Installation des pilotes essentiels.</li>
-                    <li>Vérifie le bon fonctionnement du PC après remise en service.</li>
+                    <li>Vérification du bon fonctionnement du PC après remise en service.</li>
                 </ul>
             </div>
         </td>
@@ -1083,10 +1125,11 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Réinstallation + sauvegarde</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>60 €<div class="btnAcheter"> <a href="https://buy.stripe.com/6oUbJ15z02RYbVPdpedZ605">Acheter</a> </div></td>
+        <td>60 €<div class="btnAcheter"> <a href="https://buy.stripe.com/6oUbJ15z02RYbVPdpedZ605" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1105,11 +1148,12 @@
     <tr class="service-main-row">
         <td class="service-name-cell">
             <div class="service-line">
-                <span class="service-title">Installation stockage </span>
-                <button type="button" class="service-arrow">⌄</button>
+                <span class="service-title">Installation stockage</span>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>*30 €<div class="btnAcheter"> <a href="https://buy.stripe.com/9B69ATe5wdwCf813OEdZ60c">Acheter</a> </div></td>
+        <td>*30 €<div class="btnAcheter"> <a href="https://buy.stripe.com/9B69ATe5wdwCf813OEdZ60c" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1129,11 +1173,12 @@
     <tr class="service-main-row">
         <td class="service-name-cell">
             <div class="service-line">
-                <span class="service-title">Installation RAM </span>
-                <button type="button" class="service-arrow">⌄</button>
+                <span class="service-title">Installation RAM</span>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>*20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/8x2dR92mO64a1hb0CsdZ60d">Acheter</a> </div></td>
+        <td>*20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/8x2dR92mO64a1hb0CsdZ60d" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1154,10 +1199,11 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Nettoyage physique PC portable</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/7sYaEX3qS9gmf81dpedZ606">Acheter</a> </div></td>
+        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/7sYaEX3qS9gmf81dpedZ606" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1177,10 +1223,11 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Nettoyage physique PC fixe</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>30 €<div class="btnAcheter"> <a href="https://buy.stripe.com/aFaaEXe5wgIOaRL0CsdZ607">Acheter</a> </div></td>
+        <td>30 €<div class="btnAcheter"> <a href="https://buy.stripe.com/aFaaEXe5wgIOaRL0CsdZ607" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1200,10 +1247,11 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Changement pâte thermique</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/eVq28r9Pg78egc584UdZ608">Acheter</a> </div></td>
+        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/eVq28r9Pg78egc584UdZ608" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1223,10 +1271,11 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Optimisation gaming</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>30 €<div class="btnAcheter"> <a href="https://buy.stripe.com/5kQ7sL3qSgIO7Fz98YdZ609">Acheter</a> </div></td>
+        <td>30 €<div class="btnAcheter"> <a href="https://buy.stripe.com/5kQ7sL3qSgIO7Fz98YdZ609" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1246,10 +1295,11 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Suppression malware/virus</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>30 €<div class="btnAcheter"> <a href="https://buy.stripe.com/00wcN5gdE8cif814SIdZ60a">Acheter</a> </div></td>
+        <td>30 €<div class="btnAcheter"> <a href="https://buy.stripe.com/00wcN5gdE8cif814SIdZ60a" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1257,7 +1307,7 @@
                 <strong>Détail de la prestation :</strong>
                 <ul>
                     <li>Analyse du système pour détecter les menaces.</li>
-                    <li>Suppression des malwares, virus ou programmes indésirables .</li>
+                    <li>Suppression des malwares, virus ou programmes indésirables.</li>
                     <li>Nettoyage du navigateur et des éléments suspects.</li>
                     <li>Conseils de sécurité pour éviter une nouvelle infection.</li>
                 </ul>
@@ -1269,10 +1319,11 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Sauvegarde de données</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/cNicN5aTk64a3pjcladZ60b">Acheter</a> </div></td>
+        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/cNicN5aTk64a3pjcladZ60b" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1292,10 +1343,11 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Changement de composant</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>*25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/cNi6oH0eG5062lf98YdZ60e">Acheter</a> </div></td>
+        <td>*25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/cNi6oH0eG5062lf98YdZ60e" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1316,11 +1368,12 @@
 <tr class="service-main-row">
         <td class="service-name-cell">
             <div class="service-line">
-                <span class="service-title">Montage PC simple </span>
-                <button type="button" class="service-arrow">⌄</button>
+                <span class="service-title">Montage PC simple</span>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>*40 €<div class="btnAcheter"> <a href="https://buy.stripe.com/fZu8wPaTk2RY1hb5WMdZ60f">Acheter</a> </div></td>
+        <td>*40 €<div class="btnAcheter"> <a href="https://buy.stripe.com/fZu8wPaTk2RY1hb5WMdZ60f" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1328,8 +1381,8 @@
                 <strong>Détail de la prestation :</strong>
                 <ul>
                     <li>* Ce prix n'inclut pas le prix des composants.</li>
-                    <li>Sélection de composants adaptés au budget et à l'utilisation .</li>
-                    <li>Montage physique des composants et des câbles .</li>
+                    <li>Sélection de composants adaptés au budget et à l'utilisation.</li>
+                    <li>Montage physique des composants et des câbles.</li>
                     <li>Test démarrage.</li>
                 </ul>
             </div>
@@ -1339,10 +1392,11 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Montage PC complet</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>*60 €<div class="btnAcheter"> <a href="https://buy.stripe.com/4gM3cvbXo64a2lf1GwdZ60g">Acheter</a> </div></td>
+        <td>*60 €<div class="btnAcheter"> <a href="https://buy.stripe.com/4gM3cvbXo64a2lf1GwdZ60g" target="_blank"
+   rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1350,11 +1404,11 @@
                 <strong>Détail de la prestation :</strong>
                 <ul>
                     <li>* Ce prix n'inclut pas le prix des composants.</li>
-                    <li>Sélection de composants adaptés au budget et à l'utilisation .</li>
-                    <li>Montage physique des composants et des câbles .</li>
-                    <li>Installation de l'OS demandé ou adapté (Windows 10/11, linux, etc).</li>
-		    <li>Test de démarrage et de stabilité.</li>
-		    <li>Optimisation et installation des pilotes.</li>
+                    <li>Sélection de composants adaptés au budget et à l'utilisation.</li>
+                    <li>Montage physique des composants et des câbles.</li>
+                    <li>Installation de l'OS demandé ou adapté (Windows 10/11, Linux, etc.).</li>
+		            <li>Test de démarrage et de stabilité.</li>
+		            <li>Optimisation et installation des pilotes.</li>
                 </ul>
             </div>
         </td>
@@ -1376,7 +1430,7 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Diagnostic</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
         <td class="price-free">Gratuit</td>
@@ -1398,10 +1452,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Pose d'une vitre de protection</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>15 €<div class="btnAcheter"> <a href="https://buy.stripe.com/bJe7sL4uWcsy2lf0CsdZ60h">Acheter</a> </div></td>
+        <td>15 €<div class="btnAcheter"> <a href="https://buy.stripe.com/bJe7sL4uWcsy2lf0CsdZ60h" target="_blank" rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1419,11 +1473,11 @@
 <tr class="service-main-row">
         <td class="service-name-cell">
             <div class="service-line">
-                <span class="service-title">Changement d'écran/de vitre arrière</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <span class="service-title">Changement d'écran / de vitre arrière</span>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>*20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/5kQ7sLf9A64af8198YdZ60m">Acheter</a> </div></td>
+        <td>*20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/5kQ7sLf9A64af8198YdZ60m" target="_blank" rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1431,7 +1485,7 @@
                 <strong>Détail de la prestation :</strong>
                 <ul>
 		    <li>* Ce prix n'inclut pas le prix du nouvel écran/vitre arrière.</li>
-                    <li>Commande d'un nouvel écrand/vitre arrière adapté à votre téléphone.</li>
+                    <li>Commande d'un nouvel écran/vitre arrière adapté à votre téléphone.</li>
                     <li>Installation d'un écran/vitre arrière neuf.</li>
                     
                 </ul>
@@ -1443,10 +1497,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Changement de batterie</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>*50 €<div class="btnAcheter"> <a href="https://buy.stripe.com/5kQ4gze5wfEK0d7gBqdZ60n">Acheter</a> </div></td>
+        <td>*50 €<div class="btnAcheter"> <a href="https://buy.stripe.com/5kQ4gze5wfEK0d7gBqdZ60n" target="_blank" rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1466,10 +1520,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Réinitialisation complète</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/9B69ATd1s1NU4tn70QdZ60i">Acheter</a> </div></td>
+        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/9B69ATd1s1NU4tn70QdZ60i" target="_blank" rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1488,10 +1542,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Sauvegarde/transfert données</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/6oUfZh8Lc1NUbVP84UdZ60j">Acheter</a> </div></td>
+        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/6oUfZh8Lc1NUbVP84UdZ60j" target="_blank" rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1510,10 +1564,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Nettoyage stockage</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/dRm7sL2mO9gm5xr4SIdZ60k" >Acheter</a> </div></td>
+        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/dRm7sL2mO9gm5xr4SIdZ60k" target="_blank" rel="noopener">Acheter</a> </div></td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1532,10 +1586,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Configuration téléphone neuf</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>20 € <div class="btnAcheter"> <a href="https://buy.stripe.com/dRm00j6D464agc5cladZ60l">Acheter</a> </div> </td>
+        <td>20 € <div class="btnAcheter"> <a href="https://buy.stripe.com/dRm00j6D464agc5cladZ60l" target="_blank" rel="noopener">Acheter</a> </div> </td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1565,7 +1619,7 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Diagnostic réseau</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
         <td class="price-free">Gratuit</td>
@@ -1588,10 +1642,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Dépannage connexion Internet</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/14A3cv2mO78e2lf5WMdZ60o">Acheter</a> </div> </td>
+        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/14A3cv2mO78e2lf5WMdZ60o" target="_blank" rel="noopener">Acheter</a> </div> </td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1611,10 +1665,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Optimisation Wi-Fi</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/6oU28r2mOfEK4tncladZ60p">Acheter</a> </div> </td>
+        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/6oU28r2mOfEK4tncladZ60p" target="_blank" rel="noopener">Acheter</a> </div> </td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1634,10 +1688,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Configuration box Internet</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/4gM8wP9PgdwCgc5dpedZ60q">Acheter</a> </div> </td>
+        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/4gM8wP9PgdwCgc5dpedZ60q" target="_blank" rel="noopener">Acheter</a> </div> </td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1657,10 +1711,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Sécurisation du réseau Wi-Fi</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/7sY14n5z08cif810CsdZ60r">Acheter</a> </div> </td>
+        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/7sY14n5z08cif810CsdZ60r" target="_blank" rel="noopener">Acheter</a> </div> </td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1681,10 +1735,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Installation imprimante réseau</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/aFadR9f9Abou9NHetidZ60s">Acheter</a> </div> </td>
+        <td>20 €<div class="btnAcheter"> <a href="https://buy.stripe.com/aFadR9f9Abou9NHetidZ60s" target="_blank" rel="noopener">Acheter</a> </div> </td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1705,10 +1759,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Partage de fichiers et imprimantes</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/9B6fZh2mOcsy7Fz1GwdZ60t">Acheter</a> </div> </td>
+        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/9B6fZh2mOcsy7Fz1GwdZ60t" target="_blank" rel="noopener">Acheter</a> </div> </td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1728,11 +1782,11 @@
     <tr class="service-main-row">
         <td class="service-name-cell">
             <div class="service-line">
-                <span class="service-title">Installation répéteur Wi-Fi </span>
-                <button type="button" class="service-arrow">⌄</button>
+                <span class="service-title">Installation répéteur Wi-Fi</span>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/28E00j8LcfEKgc584UdZ60u">Acheter</a> </div> </td>
+        <td>25 €<div class="btnAcheter"> <a href="https://buy.stripe.com/28E00j8LcfEKgc584UdZ60u" target="_blank" rel="noopener">Acheter</a> </div> </td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1752,10 +1806,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Installation réseau local</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>30 €<div class="btnAcheter"> <a href="https://buy.stripe.com/bJefZhf9AgIO8JDdpedZ60v">Acheter</a> </div> </td>
+        <td>30 €<div class="btnAcheter"> <a href="https://buy.stripe.com/bJefZhf9AgIO8JDdpedZ60v" target="_blank" rel="noopener">Acheter</a> </div> </td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1776,10 +1830,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Installation Wi-Fi Mesh</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>35 €<div class="btnAcheter"> <a href="https://buy.stripe.com/7sY28r0eG2RY5xr1GwdZ60w">Acheter</a> </div> </td>
+        <td>35 €<div class="btnAcheter"> <a href="https://buy.stripe.com/7sY28r0eG2RY5xr1GwdZ60w" target="_blank" rel="noopener">Acheter</a> </div> </td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1799,10 +1853,10 @@
         <td class="service-name-cell">
             <div class="service-line">
                 <span class="service-title">Diagnostic et optimisation réseau complète</span>
-                <button type="button" class="service-arrow">⌄</button>
+                <button type="button" class="service-arrow" aria-expanded="false">⌄</button>
             </div>
         </td>
-        <td>40 €<div class="btnAcheter"> <a href="https://buy.stripe.com/6oU14n0eG506gc53OEdZ60x">Acheter</a> </div> </td>
+        <td>40 €<div class="btnAcheter"> <a href="https://buy.stripe.com/6oU14n0eG506gc53OEdZ60x" target="_blank" rel="noopener">Acheter</a> </div> </td>
     </tr>
     <tr class="service-detail-row">
         <td colspan="2" class="service-detail-cell">
@@ -1843,7 +1897,7 @@
                         <li>Optimisation système</li>
                     </ul>
                     <div class="pack-price">40 € <span>au lieu de 55 €</span></div>
-                    <div class="grosBtnAcheter"> <a href="https://buy.stripe.com/eVq5kD8Lc0JQ2lfbh6dZ60y">Acheter</a> </div> 
+                    <div class="grosBtnAcheter"> <a href="https://buy.stripe.com/eVq5kD8Lc0JQ2lfbh6dZ60y" target="_blank" rel="noopener">Acheter</a> </div> 
                 </div>
 
                 <div class="pack-card featured">
@@ -1855,7 +1909,7 @@
                         <li>Optimisation finale</li>
                     </ul>
                     <div class="pack-price">70 € <span>au lieu de 95 €</span></div>
-                    <div class="grosBtnAcheter"> <a href="https://buy.stripe.com/8x200j1iK1NU0d74SIdZ60z">Acheter</a> </div> 
+                    <div class="grosBtnAcheter"> <a href="https://buy.stripe.com/8x200j1iK1NU0d74SIdZ60z" target="_blank" rel="noopener">Acheter</a> </div> 
                 </div>
 
                 <div class="pack-card">
@@ -1867,7 +1921,7 @@
                         <li>Vérification températures</li>
                     </ul>
                     <div class="pack-price">50 € <span>au lieu de 65 €</span></div>
-                    <div class="grosBtnAcheter"> <a href="https://buy.stripe.com/dRm28r9PggIO6Bv2KAdZ60A">Acheter</a> </div> 
+                    <div class="grosBtnAcheter"> <a href="https://buy.stripe.com/dRm28r9PggIO6Bv2KAdZ60A" target="_blank" rel="noopener">Acheter</a> </div> 
                 </div>
             </div>
         </div>
@@ -2150,13 +2204,14 @@
         if (menuToggle && navLinks) {
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
-            });
 
-            menuToggle.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    navLinks.classList.toggle('active');
-                }
+                const isOpen = navLinks.classList.contains('active');
+
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                menuToggle.setAttribute(
+                    'aria-label',
+                    isOpen ? 'Fermer le menu' : 'Ouvrir le menu'
+                );
             });
         }
 
@@ -2234,6 +2289,7 @@ document.querySelectorAll('.service-arrow').forEach(button => {
 
         detailRow.classList.toggle('open');
         this.classList.toggle('active', !isOpen);
+        this.setAttribute('aria-expanded', !isOpen);
     });
 });
 
